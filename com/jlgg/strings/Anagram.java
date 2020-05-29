@@ -37,14 +37,15 @@ public class Anagram {
         Map<Character, Integer> map2 = new HashMap<>();
         fillMap(map2, s2Arr);
 
+        // The idea is to make S1 equal to S2
         int counter = 0;
         for(Character c : map2.keySet()) {
             // Check if char is contained in map1
             if(!map1.containsKey(c)) {
-                // not there then char needs to be changed
+                // char(s) needs to be changed
                 counter += map2.get(c);
             } else {
-                // is there then cal diff frequencies, if map1 has more then 0 chars changed,
+                // calc diff frequencies, if map1 has more then 0 chars changed,
                 // otherwise, the diff means chars to be changed
                 counter += Math.max(0, map2.get(c) - map1.get(c));
             }
