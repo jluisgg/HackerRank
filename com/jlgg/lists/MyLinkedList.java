@@ -93,31 +93,27 @@ public class MyLinkedList {
      * Given a key, removes the first occurrence of it
      */
     public void deleteNode(int key) {
+        Node n = head;
+
         // If list is empty, do nothing
-        if (head == null) {
+        if (n == null) {
             return;
         }
         // If node to be removed is the head
-        if (head.data == key) {
+        if (n.data == key) {
             // Unlink the old head
-            head = head.next;
+            head = n.next;
             return;
         }
-        // Need references of current and previous nodes while traversing
-        Node current = head;
-        Node previous = head;
-        // Traverse the list and look for the key
-        while (current != null) {
-            if (current.data == key) {
-                // Update previous link to what the removed node whats pointing next
-                previous.next = current.next;
+
+        while (n.next != null) {
+            if (n.next.data == key) {
                 // Unlink the Node
-                current.next = null;
+                n.next = n.next.next;
                 return;
             }
             // Move forward in the list
-            previous = current;
-            current = current.next;
+            n = n.next;
         }
     }
 
