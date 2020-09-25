@@ -54,7 +54,7 @@ public class WordsFrequency {
     }
 
     public static void main(String[] args) {
-        String text = "this is just a test this an awesome this is a program for this night";
+        String text = "this is just a test this an awesome  @ this is a program for this night";
         // Convert Text to Words list
         textToWordsList(text);
         // Calculate the Frequencies
